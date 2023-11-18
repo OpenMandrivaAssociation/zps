@@ -7,7 +7,8 @@ URL:            https://github.com/orhun/zps
 Source0:        https://github.com/orhun/zps/archive/%{version}/%{name}-%{version}.tar.gz
  
 BuildRequires:  cmake
- 
+BuildRequires:  desktop-file-utils
+
 %description
 zps lists the running processes with theirs stats and indicates/reaps the 
 zombie processes.
@@ -19,6 +20,8 @@ zombie processes.
 %cmake
 %make_build
 
+desktop-file-install --dir=%{buildroot}/%{_datadir}/applications .application/%{name}.desktop
+
 %install
 %make_install -C build
 
@@ -27,4 +30,4 @@ zombie processes.
 %doc README.md
 %{_bindir}/%{name}
 #{_mandir}/man1/%{name}.1*
-#{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/%{name}.desktop
