@@ -26,5 +26,5 @@ zombie processes.
 %license LICENSE
 %doc README.md
 %{_bindir}/%{name}
-%{_mandir}/man1/%{name}.1*
-%{_datadir}/applications/%{name}.desktop
+#{_mandir}/man1/%{name}.1*
+#{_datadir}/applications/%{name}.desktop
